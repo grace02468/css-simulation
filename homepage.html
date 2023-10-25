@@ -1,0 +1,181 @@
+<html>
+  <body>
+	<div class="menu">
+	  <button class="menuName" onclick="callItems();">程式碼模擬</button>
+	  <a class="menuName" href="quiz.html">小測驗</a>
+	</div>
+	<div id="items" class="items">
+	  <div id="item1" class="item"><a href="basic.html">基本樣式</a></div>
+	  <div id="item2" class="item"><a href="text.html">文字樣式</a></div>
+	  <div id="item3" class="item"><a href="padding.html">內距、外距</a></div>
+	  <div id="item4" class="item"><a href="transform.html">位移、旋轉、縮放、歪斜</a></div>
+	</div>
+	<div class="introduction">
+		<div class="text">
+			<h1 class="title">CSS模擬教學網</h1>
+			<h3 class="subtitle">透過視覺化的方式<br>有效學習如何撰寫css、JavaScript改變網頁基礎樣式</h1>
+		</div>
+		<img src="home_pic.png" />
+	</div>
+	
+  </body>
+  <head>
+  <script>
+	var items=document.getElementById("items");
+	var item1=document.getElementById("item1");
+	var item2=document.getElementById("item2");
+	var item3=document.getElementById("item3");
+	var item4=document.getElementById("item4");
+	var count=0;
+
+	function callItems(){
+	  if(count%2==0){
+		items.style.opacity=1;
+		item1.style.opacity=1;
+		item2.style.opacity=1;
+		item3.style.opacity=1;
+		item4.style.opacity=1;
+		item1.style.transitionDelay=0.4+"s";
+		item2.style.transitionDelay=0.8+"s";
+		item3.style.transitionDelay=1.3+"s";
+		item4.style.transitionDelay=1.8+"s";
+	  }else{
+		item1.style.opacity=0;
+		item2.style.opacity=0;
+		item3.style.opacity=0;
+		item4.style.opacity=0;
+		items.style.opacity=0;
+		item1.style.transitionDelay=0+"s";
+		item2.style.transitionDelay=0+"s";
+		item3.style.transitionDelay=0+"s";
+		item4.style.transitionDelay=0+"s";
+		
+	  }
+	  count++;
+	}	
+  </script>
+  <style>
+	html, body {
+	  padding: 0;
+	  margin: 0;
+	  background: url(https://storage.googleapis.com/production-dotster-v1-0-8/378/360378/YBLlXV5U/e209e483db0842a68a8584d97214917a);
+	  background-size: cover;
+	  height: 100%;
+	  position: relative;
+	  font-family: "微軟正黑體";
+	}
+
+	.menu {
+	  border-bottom: solid 1px #a3a3a3;
+	  padding: 2px 15px;
+	  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.08));
+	}
+
+	.menuName {
+	  display: inline-block;
+	  border: 0;
+	  background-color: transparent;
+	  padding: 12px 15px;
+	  margin-top: 5px;
+	  font-size: 14px;
+	  font-weight: bold;
+	  letter-spacing: 1px;
+	  color: #646464;
+	  cursor: pointer;
+	  transition: 0.5s;
+	  text-decoration: none;
+	}
+	.menuName:hover {
+	  color: #548fb1;
+	  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+	}
+	
+	.introduction {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-evenly;
+	  align-items: center;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  
+	}
+	
+	.text {
+	  width: 450px;
+	  margin-right: 10px;	
+	}
+
+	.title {
+	  color: #3f3f3f;
+	}
+	
+	.subtitle {
+	  color: #8f8f8f;
+	}
+	
+	
+	img {
+	  margin-left: 10px;	
+	  width: 900px;
+	}
+
+	.items {
+	  position: absolute;
+	  left: 50px;
+	  top: 90px;
+	  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.08));
+	  border-radius: 5px;
+	  font-size: 14px;
+	  opacity: 0;
+	  transition: 0.4s;
+	  font-weight: bold;
+	  letter-spacing: 1px;
+	}
+	.items:after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 20%;
+	  width: 0;
+	  height: 0;
+	  border: 20px solid transparent;
+	  border-bottom-color: #d1d1d1;
+	  border-top: 0;
+	  border-left: 0;
+	  margin-left: -10px;
+	  margin-top: -20px;
+	}
+	.items .item {
+	  padding: 10px 15px;
+	  opacity: 0;
+	}
+	.items .item a {
+	  text-decoration: none;
+	  color: white;
+	}
+	.items .item:hover {
+	  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.08));
+	}
+
+	#item1 {
+	  border-radius: 5px 5px 0 0;
+	  transition: 0.2s 0.4s;
+	}
+
+	#item2 {
+	  transition: 0.2s 0.8s;
+	}
+
+	#item3 {
+	  transition: 0.2s 1.3s;
+	}
+
+	#item4 {
+	  border-radius: 0 0 5px 5px;
+	  transition: 0.2s 1.8s;
+	}	
+  </style>
+  </head>
+</html>

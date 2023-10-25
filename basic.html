@@ -1,0 +1,550 @@
+<html>
+  <body>
+	<div class="menu">
+	  <button class="menuName" onclick="callItems();">程式碼模擬</button>
+	  <a class="menuName" href="quiz.html">小測驗</a>
+	  <a id="homepage" class="menuName" href="homepage.html">首頁</a>
+	</div>
+	<div id="items" class="items">
+	  <div id="item1" class="item"><a href="basic.html">基本樣式</a></div>
+	  <div id="item2" class="item"><a href="text.html">文字樣式</a></div>
+	  <div id="item3" class="item"><a href="padding.html">內距、外距</a></div>
+	  <div id="item4" class="item"><a href="transform.html">位移、旋轉、縮放、歪斜</a></div>
+	</div>
+	<div class="box">
+	  <div class="left">
+		<div class="title1">CSS程式碼</div>
+		#item{ <br>&emsp;&emsp;&emsp;//寬高<br>&emsp;&emsp;&emsp;width: <input type="text" id="input_width">px;<br>&emsp;&emsp;&emsp;height: <input type="text" id="input_height">px;&emsp;<button onclick="changeItemSize();">模擬</button><br><br>&emsp;&emsp;&emsp;//背景顏色<br>&emsp;&emsp;&emsp;background-color: <input type="text" id="input_color" placeholder="輸入色碼..."/> ;&emsp;<button onclick="changeItemColor();">模擬</button><br><br>&emsp;&emsp;&emsp;//邊框<br>&emsp;&emsp;&emsp;border-color:  <input type="text" id="border_color" placeholder="輸入色碼..."/> ;<br>&emsp;&emsp;&emsp;border-width: <input type="text" id="border_width"/>px;<br>&emsp;&emsp;&emsp;border-style:&nbsp;
+		  <select id="mySelect">
+			<option value="solid">solid</option>
+			<option value="dashed">dashed</option>
+			<option value="double">double</option>
+			<option value="dotted">dotted</option>
+			<option value="groove">groove</option>
+			<option value="ridge">ridge</option>
+			<option value="inset">inset</option>
+			<option value="outset">outset</option>
+		  </select> ;<br>&emsp;&emsp;&emsp;<span id="bordernone">border: none;<input type="checkbox" id="border"></span>
+		  &emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="changeBorder();">模擬</button><br><br>&emsp;&emsp;&emsp;//圓角<br>&emsp;&emsp;&emsp;border-radius: <input type="text" id="border_radius"/>%;&emsp;<button onclick="changeBorderRadius();">模擬</button><br>&nbsp;}  
+
+	  </div>
+	  <div class="middle">
+		<div class="title2">用js控制css</div>
+		<div class="code">
+		var item = document.getElementById("item");
+		<br><br>
+		var itemheight, itemwidth;
+		<br>
+		itemheight = document.getElementById("input_width").value;
+		<br>
+			itemwidth = document.getElementById("input_height").value;
+		<br>
+		<font id="wh_code">
+			item.style.height = <span id="itemheight_text">itemheight</span> +"px";
+		<br>
+			item.style.width = <span id="itemwidth_text">itemwidth</span> +"px";
+		</font>
+		<br><br>
+		var itemcolor;
+		<br>
+		itemcolor = document.getElementById("input_color").value;
+		<br>
+		<font id="background_code">
+			item.style.background = <span id="itemcolor_text">itemcolor</span>;
+		</font>
+		<br><br>
+		var borderstyle, index, val, bordercolor, borderwidth;
+		<br>
+		bordercolor = document.getElementById("border_color").value;
+		<br>
+		borderwidth = document.getElementById("border_width").value;
+		<font id="border_code1">
+		<br>
+		item.style.borderColor = <span id="bordercolor_text">bordercolor</span>;
+		<br>
+		item.style.borderWidth = <span id="borderwidth_text">borderwidth</span>+"px";
+		</font>
+		
+		<br><br>
+		borderstyle = document.getElementById("mySelect");
+		<br>
+		index = borderstyle.selectedIndex;
+		<br>
+		val = borderstyle.options[index].value;
+		<br>
+		<font id="border_code2">
+		item.style.borderStyle = <span id="val_text">val</span>; 
+		</font>
+		<br><br>
+		var borderradius;
+		<br>
+		borderradius = document.getElementById("border_radius").value;
+		<br>
+		<font id="radius_code">
+		item.style.borderRadius = <span id="borderradius_text">borderradius</span>+"%";
+		</font>
+		
+		</div>
+		<button id="variable" onclick="changeVariable();">查看目前變數的值</button>
+	  </div>
+	  <div class="right">
+		<div class="title3">模擬介面</div>
+		<div class="speech-bubble"><span class="im">我是一個id叫做"item"的&lt;div&gt;<br>預設為長寬各100px,白底黑框的正方形<br>輸入左方數值來操縱我！！！</span></div>
+		<div class="item" id="item"></div>
+		<button id="reset" onclick="resetDiv();">重置</button>
+	  </div>
+	</div>
+  </body>
+  <head>
+  <script>
+	var item=document.getElementById("item");
+	var wh_code=document.getElementById("wh_code");
+	var background_code=document.getElementById("background_code");
+	var border_code1=document.getElementById("border_code1");
+	var border_code2=document.getElementById("border_code2");
+	var radius_code=document.getElementById("radius_code");
+
+	var itemheight_text=document.getElementById("itemheight_text");
+	var itemwidth_text=document.getElementById("itemwidth_text");
+	var itemcolor_text=document.getElementById("itemcolor_text");
+	var bordercolor_text=document.getElementById("bordercolor_text");
+	var borderwidth_text=document.getElementById("borderwidth_text");
+	var val_text=document.getElementById("val_text");
+	var borderradius_text=document.getElementById("borderradius_text");
+
+
+	function resetBackground(){
+	  wh_code.style.background="transparent";
+	  background_code.style.background="transparent";
+	  border_code1.style.background="transparent";
+	  border_code2.style.background="transparent";
+	  radius_code.style.background="transparent";
+	}
+	function resetRedText(){
+	  itemheight_text.style.color="black";
+	  itemwidth_text.style.color="black";
+	  itemcolor_text.style.color="black";
+	  bordercolor_text.style.color="black";
+	  borderwidth_text.style.color="black";
+	  val_text.style.color="black";
+	  borderradius_text.style.color="black";
+	}
+
+	var itemheight=100,itemwidth=100;
+
+	function changeItemSize(){
+			itemheight=document.getElementById("input_height").value;
+			itemwidth=document.getElementById("input_width").value;
+			item.style.height=itemheight+"px";
+			item.style.width=itemwidth+"px";
+		resetBackground();
+		wh_code.style.background="#fff79b";
+		resetRedText();
+		itemwidth_text.style.color="red";
+		itemheight_text.style.color="red";
+		itemwidth_text.innerHTML="itemwidth";
+		itemheight_text.innerHTML="itemheight";
+		}
+
+	var itemcolor;
+
+	function changeItemColor(){
+			itemcolor=document.getElementById("input_color").value;
+			item.style.background=itemcolor;
+		resetBackground();
+		background_code.style.background="#fff79b";
+		resetRedText();
+		itemcolor_text.style.color="red";
+		itemcolor_text.innerHTML="itemcolor";
+		}
+
+	var borderstyle,index,val,bordercolor,borderwidth,borderradius;
+	var border,bordernone;
+
+
+	function changeBorder(){
+	  border = document.getElementById("border");
+	  bordernone=document.getElementById("bordernone");
+	  if(border.checked){
+		bordernone.style.textDecoration="none";
+		item.style.border="none";
+		resetBackground();
+		resetRedText();
+	  }else{
+		bordernone.style.textDecoration="line-through";
+		bordercolor=document.getElementById("border_color").value;
+		item.style.borderColor=bordercolor;
+		borderwidth=document.getElementById("border_width").value;
+		item.style.borderWidth=borderwidth+"px";
+		borderstyle=document.getElementById("mySelect");
+		index=borderstyle.selectedIndex;
+		val = borderstyle.options[index].value;
+		item.style.borderStyle=val;
+		resetBackground();
+		border_code1.style.background="#fff79b";
+		border_code2.style.background="#fff79b";
+		resetRedText();
+		bordercolor_text.style.color="red";
+		borderwidth_text.style.color="red";
+		val_text.style.color="red";
+		bordercolor_text.innerHTML="bordercolor";
+		borderwidth_text.innerHTML="borderwidth";
+		val_text.innerHTML="val";
+	  }
+	}
+
+
+
+	function changeBorderRadius(){
+	  borderradius=document.getElementById("border_radius").value;
+	  item.style.borderRadius=borderradius+"%";
+	  resetBackground();
+	  radius_code.style.background="#fff79b";
+	  resetRedText();
+	  borderradius_text.style.color="red";
+	  borderradius_text.innerHTML="borderradius";
+	}
+
+	function resetDiv(){
+	  itemwidth_text.innerHTML="itemwidth";
+	  itemheight_text.innerHTML="itemheight";
+	  itemcolor_text.innerHTML="itemcolor";
+	  bordercolor_text.innerHTML="bordercolor";
+	  borderwidth_text.innerHTML="borderwidth";
+	  val_text.innerHTML="val";
+	  borderradius_text.innerHTML="borderradius";
+	  
+	  item.style.height=100+"px";
+	  item.style.width=100+"px";
+	  item.style.background="white";
+	  
+	  item.style.borderColor="black";
+	  item.style.borderStyle="solid";
+	  item.style.borderRadius=0+"%";
+	  item.style.borderWidth=1+"px";
+	  resetBackground();
+	  resetRedText();
+	  document.getElementById("input_width").value="";
+	  document.getElementById("input_height").value="";
+	  document.getElementById("input_color").value="";
+	  document.getElementById("border_color").value="";
+	  document.getElementById("border_width").value="";
+	  document.getElementById("border_radius").value="";
+	  document.getElementById("border").checked=false;
+	  document.getElementById("bordernone").style.textDecoration="line-through";
+	  document.getElementById("mySelect").selectedIndex=0;
+	  item.style.borderStyle="solid";
+	  
+	}
+
+	function changeVariable(){
+	  if(itemwidth_text.style.color=="red"){
+		itemwidth_text.innerHTML='"'+itemwidth+'"';
+		itemheight_text.innerHTML='"'+itemheight+'"';
+	  }else if(itemcolor_text.style.color=="red"){
+		itemcolor_text.innerHTML='"'+itemcolor+'"';
+	  }else if(val_text.style.color=="red"){
+		bordercolor_text.innerHTML='"'+bordercolor+'"';
+		borderwidth_text.innerHTML='"'+borderwidth+'"';
+		val_text.innerHTML='"'+val+'"';
+	  }else if(borderradius_text.style.color=="red"){
+		borderradius_text.innerHTML='"'+borderradius+'"';
+	  }else{
+		
+	  }
+	}
+
+
+	var items=document.getElementById("items");
+	var item1=document.getElementById("item1");
+	var item2=document.getElementById("item2");
+	var item3=document.getElementById("item3");
+	var item4=document.getElementById("item4");
+	var count=0;
+
+	function callItems(){
+	  if(count%2==0){
+		items.style.opacity=1;
+		item1.style.opacity=1;
+		item2.style.opacity=1;
+		item3.style.opacity=1;
+		item4.style.opacity=1;
+		item1.style.transitionDelay=0.4+"s";
+		item2.style.transitionDelay=0.8+"s";
+		item3.style.transitionDelay=1.3+"s";
+		item4.style.transitionDelay=1.8+"s";
+	  }else{
+		item1.style.opacity=0;
+		item2.style.opacity=0;
+		item3.style.opacity=0;
+		item4.style.opacity=0;
+		items.style.opacity=0;
+		item1.style.transitionDelay=0+"s";
+		item2.style.transitionDelay=0+"s";
+		item3.style.transitionDelay=0+"s";
+		item4.style.transitionDelay=0+"s";
+		
+	  }
+	  count++;
+	}
+
+  </script>
+  <style>
+	html, body {
+	  margin: 0px;
+	  background: url(https://storage.googleapis.com/production-dotster-v1-0-8/378/360378/YBLlXV5U/e209e483db0842a68a8584d97214917a);
+	  background-size: cover;
+	}
+
+	.box {
+	  width: 90%;
+	  position: relative;
+	  margin-left: auto;
+	  margin-right: auto;
+	  top: 40px;
+	  height: 530px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: flex-start;
+	  color: #4d4d4d;
+	  font-weight: 400;
+	  letter-spacing: 0.2px;
+	  line-height: 17px;
+	  z-index: 1;
+	}
+
+	.left, .middle, .right {
+	  display: inline-block;
+	  position: relative;
+	  padding: 20px;
+	  padding-top: 30px;
+	  margin: 10px;
+	  border-radius: 5px;
+	  box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.15);
+	  margin-bottom: 50px;
+	  height: 100%;
+	  background-color: #f8f8f8;
+	}
+
+	.left {
+	  width: 30%;
+	  font-size: 18px;
+	}
+
+	.middle {
+	  width: 35%;
+	}
+	.middle .code {
+	  font-size: 16px;
+	  margin-left: 15px;
+	}
+
+	.right {
+	  width: 25%;
+	}
+
+	input {
+	  border-color: #e6e6e6;
+	  border-radius: 5px;
+	  width: 40px;
+	  height: 30px;
+	}
+
+	#input_color, #border_color {
+	  width: 100px;
+	}
+
+	#bordernone {
+	  position: relative;
+	  text-decoration: line-through;
+	}
+
+	#border {
+	  width: 15px;
+	  margin-left: 10px;
+	  position: absolute;
+	}
+
+	#item {
+	  width: 100px;
+	  height: 100px;
+	  border: solid 1px black;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  background-color: #fff;
+	}
+
+	.speech-bubble {
+	  width: 270px;
+	  position: absolute;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  background: #bababa;
+	  border-radius: 10px;
+	  padding: 10px 25px;
+	}
+	.speech-bubble:after {
+	  content: "";
+	  position: absolute;
+	  bottom: 0;
+	  left: 40%;
+	  width: 0;
+	  height: 0;
+	  border: 12px solid transparent;
+	  border-top-color: #bababa;
+	  border-bottom: 0;
+	  border-right: 0;
+	  margin-left: -10px;
+	  margin-bottom: -12px;
+	}
+
+	.im {
+	  font-size: 14px;
+	  font-weight: 600;
+	  letter-spacing: 1.3px;
+	  color: white;
+	  line-height: 25px;
+	}
+
+	#variable, #reset {
+	  position: absolute;
+	  bottom: 15px;
+	}
+
+	#variable {
+	  left: calc(50% - 77px);
+	}
+
+	#reset {
+	  left: calc(50% - 34px);
+	}
+
+	.title1, .title2, .title3 {
+	  position: absolute;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  top: -35px;
+	  background-color: #9e9e9e;
+	  color: #f8f8f8;
+	  padding: 10px 30px;
+	  letter-spacing: 2px;
+	  font-size: 15px;
+	  font-weight: bold;
+	  border-radius: 4px;
+	  box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.15);
+	  z-index: -1;
+	}
+
+	.box button {
+	  padding: 7px 18px;
+	  letter-spacing: 2px;
+	  font-size: 15;
+	  font-weight: bold;
+	  border: solid 1px #9e9e9e;
+	  color: #777777;
+	  border-radius: 15px;
+	  box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.15);
+	  transition: 0.1s;
+	  cursor: pointer;
+	}
+	.box button:hover {
+	  transform: translate(1.5px, 1.5px);
+	  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.4);
+	}
+
+	h3 {
+	  color: #222222;
+	}
+
+	.menu {
+	  border-bottom: solid 1px #a3a3a3;
+	  padding: 2px 15px;
+	  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.08));
+	  position: relative;
+	}
+
+	.menuName {
+	  display: inline-block;
+	  border: 0;
+	  background-color: transparent;
+	  padding: 12px 15px;
+	  margin-top: 5px;
+	  font-size: 14px;
+	  font-weight: bold;
+	  letter-spacing: 1px;
+	  color: #646464;
+	  cursor: pointer;
+	  transition: 0.5s;
+	  text-decoration: none;
+	}
+	.menuName:hover {
+	  color: #548fb1;
+	  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+	}
+
+	#homepage {
+	  position: absolute;
+	  right: 20px;
+	}
+
+	.items {
+	  position: absolute;
+	  left: 50px;
+	  top: 90px;
+	  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	  border-radius: 5px;
+	  font-size: 14px;
+	  opacity: 0;
+	  transition: 0.4s;
+	  z-index: 2;
+	  font-weight: bold;
+	  letter-spacing: 1px;
+	}
+	.items:after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 20%;
+	  width: 0;
+	  height: 0;
+	  border: 20px solid transparent;
+	  border-bottom-color: #7c7c7c;
+	  border-top: 0;
+	  border-left: 0;
+	  margin-left: -10px;
+	  margin-top: -20px;
+	}
+	.items .item {
+	  padding: 10px 15px;
+	  opacity: 0;
+	}
+	.items .item a {
+	  text-decoration: none;
+	  color: white;
+	}
+	.items .item:hover {
+	  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+	}
+
+	#item1 {
+	  border-radius: 5px 5px 0 0;
+	  transition: 0.2s 0.4s;
+	}
+
+	#item2 {
+	  transition: 0.2s 0.8s;
+	}
+
+	#item3 {
+	  transition: 0.2s 1.3s;
+	}
+
+	#item4 {
+	  border-radius: 0 0 5px 5px;
+	  transition: 0.2s 1.8s;
+	}	
+  </style>
+  </head>
+</html>
