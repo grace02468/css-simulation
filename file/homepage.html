@@ -10,7 +10,14 @@
 	  <div id="item3" class="item"><a href="padding.html">內距、外距</a></div>
 	  <div id="item4" class="item"><a href="transform.html">位移、旋轉、縮放、歪斜</a></div>
 	</div>
-	<h1 class="title">CSS模擬教學網</h1>
+	<div class="introduction">
+		<div class="text">
+			<h1 class="title">CSS模擬教學網</h1>
+			<h3 class="subtitle">透過視覺化的方式<br>有效學習如何撰寫css、JavaScript改變網頁基礎樣式</h1>
+		</div>
+		<img src="home_pic.png" />
+	</div>
+	
   </body>
   <head>
   <script>
@@ -55,6 +62,7 @@
 	  background-size: cover;
 	  height: 100%;
 	  position: relative;
+	  font-family: "微軟正黑體";
 	}
 
 	.menu {
@@ -70,7 +78,8 @@
 	  padding: 12px 15px;
 	  margin-top: 5px;
 	  font-size: 14px;
-	  letter-spacing: 0.2px;
+	  font-weight: bold;
+	  letter-spacing: 1px;
 	  color: #646464;
 	  cursor: pointer;
 	  transition: 0.5s;
@@ -80,13 +89,36 @@
 	  color: #548fb1;
 	  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 	}
-
-	.title {
+	
+	.introduction {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-evenly;
+	  align-items: center;
 	  position: absolute;
 	  left: 50%;
 	  top: 50%;
 	  transform: translate(-50%, -50%);
+	  
+	}
+	
+	.text {
+	  width: 450px;
+	  margin-right: 10px;	
+	}
+
+	.title {
 	  color: #3f3f3f;
+	}
+	
+	.subtitle {
+	  color: #8f8f8f;
+	}
+	
+	
+	img {
+	  margin-left: 10px;	
+	  width: 900px;
 	}
 
 	.items {
@@ -98,6 +130,8 @@
 	  font-size: 14px;
 	  opacity: 0;
 	  transition: 0.4s;
+	  font-weight: bold;
+	  letter-spacing: 1px;
 	}
 	.items:after {
 	  content: "";

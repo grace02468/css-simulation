@@ -133,8 +133,8 @@
 	var itemheight=100,itemwidth=100;
 
 	function changeItemSize(){
-			itemheight=document.getElementById("input_width").value;
-			itemwidth=document.getElementById("input_height").value;
+			itemheight=document.getElementById("input_height").value;
+			itemwidth=document.getElementById("input_width").value;
 			item.style.height=itemheight+"px";
 			item.style.width=itemwidth+"px";
 		resetBackground();
@@ -472,7 +472,8 @@
 	  padding: 12px 15px;
 	  margin-top: 5px;
 	  font-size: 14px;
-	  letter-spacing: 0.2px;
+	  font-weight: bold;
+	  letter-spacing: 1px;
 	  color: #646464;
 	  cursor: pointer;
 	  transition: 0.5s;
@@ -498,6 +499,8 @@
 	  opacity: 0;
 	  transition: 0.4s;
 	  z-index: 2;
+	  font-weight: bold;
+	  letter-spacing: 1px;
 	}
 	.items:after {
 	  content: "";
