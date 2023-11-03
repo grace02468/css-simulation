@@ -7,6 +7,7 @@ var count = 0;
 
 function callItems() {
   if (count % 2 == 0) {
+    items.style.zIndex = 2;
     items.style.opacity = 1;
     item1.style.opacity = 1;
     item2.style.opacity = 1;
@@ -17,6 +18,7 @@ function callItems() {
     item3.style.transitionDelay = 1.3 + "s";
     item4.style.transitionDelay = 1.8 + "s";
   } else {
+    items.style.zIndex = -1;
     item1.style.opacity = 0;
     item2.style.opacity = 0;
     item3.style.opacity = 0;
