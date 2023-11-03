@@ -1,0 +1,74 @@
+<html>
+  <body>
+	<div class="menu">
+	  <button class="menuName" onclick="callItems();">程式碼模擬</button>
+	  <a class="menuName" href="quiz.html">小測驗</a>
+	  <a id="homepage" class="menuName" href="homepage.html">首頁</a>
+	</div>
+	<div id="items" class="items">
+	  <div id="item1" class="item"><a href="basic.html">基本樣式</a></div>
+	  <div id="item2" class="item"><a href="text.html">文字樣式</a></div>
+	  <div id="item3" class="item"><a href="padding.html">內距、外距</a></div>
+	  <div id="item4" class="item"><a href="transform.html">位移、旋轉、縮放、歪斜</a></div>
+	</div>
+	<div class="box">
+	  <div class="left">
+		<div class="top">
+		  <div class="title1">CSS程式碼</div>
+		  #item{ <br>&emsp;&emsp;&emsp;//平移<br>&emsp;&emsp;&emsp;transform:&emsp;translate(<input type="text" id="input_translateX">px, <input type="text" id="input_translateY">px);&emsp;<button onclick="translateItem();">模擬</button><br>&emsp;&emsp;&emsp;//縮放<br>&emsp;&emsp;&emsp;transform:&emsp;scale(<input type="text" id="input_scaleX">, <input type="text" id="input_scaleY">);&emsp;<button onclick="scaleItem();">模擬</button><br>&emsp;&emsp;&emsp;//旋轉<br>&emsp;&emsp;&emsp;transform:&emsp;rotate(<input type="text" id="input_rotate">deg);&emsp;<button onclick="rotateItem();">模擬</button><br>&emsp;&emsp;&emsp;//歪斜<br>&emsp;&emsp;&emsp;transform:&emsp;skew(<input type="text" id="input_skewX">deg, <input type="text" id="input_skewY">deg);&emsp;<button onclick="skewItem();">模擬</button><br>&nbsp;}  
+		</div>  
+		<div class="bottom">
+		  <div class="title2">用js控制css</div>
+		  <div class="code">
+			var tX, tY, scX, scY, r, skX, skY;
+			<br><br>
+			var item = document.getElementById("item");
+			<br><br>
+			tX = document.getElementById("input_translateX").value;
+			<br>
+			tY = document.getElementById("input_translateY").value;
+			<br>
+			<font id="translate_code">
+			  item.style.transform = "translate("+<span id="itemtranslateX_text">tX</span> +"px,"+<span id="itemtranslateY_text">tY</span> +"px)";
+			</font>
+			<br><br>
+			scX = document.getElementById("input_scaleX").value;
+			<br>
+			scY = document.getElementById("input_scaleY").value;
+			<br>
+			<font id="scale_code">
+			  item.style.transform = "scale("+<span id="itemscaleX_text">scX</span> +","+<span id="itemscaleY_text">scY</span> +")";
+			</font>
+			<br><br>
+			r = document.getElementById("input_rotate").value;
+			<br>
+			<font id="rotate_code">
+			  item.style.transform = "rotate("+<span id="itemrotate_text">r</span>+"deg)";
+			</font>
+			<br><br>
+			skX = document.getElementById("input_skewX").value;
+			<br>
+			skY = document.getElementById("input_skewY").value;
+			<br>
+			<font id="skew_code">
+			  item.style.transform = "skew("+<span id="itemskewX_text">skX</span> +"deg,"+<span id="itemskewY_text">skY</span> +"deg)";
+			</font>
+		  </div>
+		  <button id="variable" onclick="changeVariable();">查看目前變數的值</button>
+		</div>
+	  </div>
+	  <div class="right">
+		<div class="title3">模擬介面</div>
+		<div id="x_axis"></div>
+		<div id="y_axis"></div>
+		<div class="item" id="item"><div id="point"></div></div>
+		<button id="reset" onclick="reset();">重置</button>
+	  </div>
+	</div>
+  
+  </body>
+  <head>
+  <script src="../js/transform.js"></script>
+  <style src="../style/transform.css"></style>
+  </head>
+</html>

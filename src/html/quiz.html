@@ -1,0 +1,255 @@
+<html>
+  <body>
+	<div class="menu">
+	  <button class="menuName" onclick="callItems();">程式碼模擬</button>
+	  <a class="menuName" href="quiz.html">小測驗</a>
+	  <a id="homepage" class="menuName" href="homepage.html">首頁</a>
+	</div>
+	<div id="items" class="items">
+	  <div id="item1" class="item"><a href="basic.html">基本樣式</a></div>
+	  <div id="item2" class="item"><a href="text.html">文字樣式</a></div>
+	  <div id="item3" class="item"><a href="padding.html">內距、外距</a></div>
+	  <div id="item4" class="item"><a href="transform.html">位移、旋轉、縮放、歪斜</a></div>
+	</div>
+	<div class="box" id="box1">
+	  <h4>題目1: 關於選擇器的描述，下列何者錯誤?</h4>
+	  <div class="choice">
+		<input type="radio" id="option1_1" name="option" class="radio-option" checked><label for="option1_1">在css中，用「.」存取class</label>
+		<br>
+		<input type="radio" id="option1_2" name="option" class="radio-option"><label for="option1_2">在css中，用「#」存取Id</label>
+		<br>
+		<input type="radio" id="option1_3" name="option" class="radio-option"><label for="option1_3">在html中，可以有多個相同名稱的class</label>
+		<br>
+		<input type="radio" id="option1_4" name="option" class="radio-option"><label for="option1_4">在html中，可以有多個相同名稱的id</label>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer1" onclick="checkAnswer1();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct1">✔</div>
+		<div class="wrong" id="wrong1">✘</div>
+	  </div>
+	</div>
+	 
+
+
+	<div class="box" id="box2">
+	  <h4>題目2: 若要設置圓角，須加上哪一行css屬性?</h4>
+	  <div class="choice">
+		<input type="radio" id="option2_1" name="option" class="radio-option" checked><label for="option2_1">border-color: red</label>
+		<br>
+		<input type="radio" id="option2_2" name="option" class="radio-option"><label for="option2_2">border-style: dotted</label>
+		<br>
+		<input type="radio" id="option2_3" name="option" class="radio-option"><label for="option2_3">border-radius: 5px</label>
+		<br>
+		<input type="radio" id="option2_4" name="option" class="radio-option"><label for="option2_4">border-width: 5px</label>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer2" onclick="checkAnswer2();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct2">✔</div>
+		<div class="wrong" id="wrong2">✘</div>
+	  </div>
+	</div>
+
+
+	<div class="box" id="box3">
+	  <h4>題目3: 若要用JavaScript改變文字顏色，需要加上哪一行指令?</h4>
+	  <div class="choice">
+		<input type="radio" id="option3_1" name="option" class="radio-option" checked><label for="option3_1">word.html.color="yellow";</label>
+		<br>
+		<input type="radio" id="option3_2" name="option" class="radio-option"><label for="option3_2">word.css.color="yellow";</label>
+		<br>
+		<input type="radio" id="option3_3" name="option" class="radio-option"><label for="option3_3">word.style.color="yellow";</label>
+		<br>
+		<input type="radio" id="option3_4" name="option" class="radio-option"><label for="option3_4">word.text.color="yellow";</label>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer3" onclick="checkAnswer3();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct3">✔</div>
+		<div class="wrong" id="wrong3">✘</div>
+	  </div>
+	</div>
+
+
+
+	<div class="box" id="box4">
+	  <h4>題目4: 若要讓物體逆時針旋轉25度，須加上哪一行指令?</h4>
+	  <div class="choice">
+		<input type="radio" id="option4_1" name="option" class="radio-option" checked><label for="option4_1">transform: rotate(25deg);</label>
+		<br>
+		<input type="radio" id="option4_2" name="option" class="radio-option"><label for="option4_2">transform: rotate(-25deg)</label>
+		<br>
+		<input type="radio" id="option4_3" name="option" class="radio-option"><label for="option4_3">transform: skewX(25deg)</label>
+		<br>
+		<input type="radio" id="option4_4" name="option" class="radio-option"><label for="option4_4">transform: skewY(-25deg)</label>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer4" onclick="checkAnswer4();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct4">✔</div>
+		<div class="wrong" id="wrong4">✘</div>
+	  </div>
+	</div>
+
+
+
+	<div class="box" id="box5">
+	  <h4>題目5: 若要用javascript 改變字型，需要加上哪一行指令?</h4>
+	  <div class="choice">
+		<input type="radio" id="option5_1" name="option" class="radio-option" checked><label for="option5_1">word.style.fontfamily="新細明體";</label>
+		<br>
+		<input type="radio" id="option5_2" name="option" class="radio-option"><label for="option5_2">word.style.fontFamily="新細明體";</label>
+		<br>
+		<input type="radio" id="option5_3" name="option" class="radio-option"><label for="option5_3">word.style.font-family="新細明體";</label>
+		<br>
+		<input type="radio" id="option5_4" name="option" class="radio-option"><label for="option5_4">word.style.font_family="新細明體";</label>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer5" onclick="checkAnswer5();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct5">✔</div>
+		<div class="wrong" id="wrong5">✘</div>
+	  </div>
+	</div>
+
+
+	<div class="box" id="box6">
+	  <h4>題目6: 若要將所有class名稱為content的p標籤文字顏色改成白色
+	，要如何撰寫選擇器?</h4>
+	  <div class="ex ex1">&lt;p class="content"&gt;內容1&lt;/p&gt;<br>&lt;p class="content"&gt;內容2&lt;/p&gt;<br>&lt;p class="content"&gt;內容3&lt;/p&gt;</div>
+	  <div class="input">
+		<span class="ans">Ans:&emsp;</span><input type="text" id="input6" placeholder=""/><span class="code">{ color : white ; }</span>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer6" onclick="checkAnswer6();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct6">✔</div>
+		<div class="wrong" id="wrong6">✘</div>
+	  </div>
+	</div>
+
+
+	<div class="box" id="box7">
+	  <h4>題目7: 若要讓id名稱為content內部的文字靠右對齊，需要增加什麼css屬性?</h4>
+	  <div class="ex ex2">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</div>
+	  <div class="input">
+		<span class="ans">Ans:&emsp;#content{&nbsp;</span><input type="text" id="input7" placeholder=""/><span class="code">: right ; }</span>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer7" onclick="checkAnswer7();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct7">✔</div>
+		<div class="wrong" id="wrong7">✘</div>
+	  </div>
+	</div>
+
+
+
+	<div class="box" id="box8">
+	  <h4>題目8: 若要讓item向右平移10px並且向上平移25px,要增加什麼css屬性?</h4>
+	  <div class="ex ex3"><div class="item"><div class="text">item</div></div></div>
+	  <div class="input">
+		<span class="ans">Ans:&emsp;#item{&nbsp;transform: </span><input type="text" id="input8" placeholder=""/><span class="code">(10px,-25px) ; }</span>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer8" onclick="checkAnswer8();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct8">✔</div>
+		<div class="wrong" id="wrong8">✘</div>
+	  </div>
+	</div>
+
+
+
+	<div class="box" id="box9">
+	  <h4>題目9: 若要讓item彼此之間有間距，要增加什麼屬性?</h4>
+	  <div class="ex ex4">
+		<div class="item"><div class="text">item</div></div>
+		<div class="item"><div class="text">item</div></div>
+		<div class="item"><div class="text">item</div></div>
+		<div class="item"><div class="text">item</div></div>
+	  </div>
+	  <div class="input">
+		<span class="ans">Ans:&emsp;#item{&nbsp;</span><input type="text" id="input9" placeholder=""/><span class="code">: 10px ; }</span>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer9" onclick="checkAnswer9();">對答案</button>
+		<button onclick="nextQuestion();">下一題</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct9">✔</div>
+		<div class="wrong" id="wrong9">✘</div>
+	  </div>
+	</div>
+
+
+
+	<div class="box" id="box10">
+	  <h4>題目10: 若要讓container(虛線部分)與其中的內容(白色區塊)有間距，要增加什麼屬性?</h4>
+	  <div class="ex ex5">
+		<div class="item"><div class="text">內容</div></div>
+	  </div>
+	  <div class="input">
+		<span class="ans">Ans:&emsp;#container{&nbsp;</span><input type="text" id="input10" placeholder=""/><span class="code">: 10px ; }</span>
+	  </div>
+	  <div class="button_box">
+		<button id="check_answer10" onclick="checkAnswer10();">對答案</button>
+		<button onclick="nextQuestion();">查看結果</button>
+	  </div>
+	  <br>
+	  <div class="feedback">
+		<div class="correct" id="correct10">✔</div>
+		<div class="wrong" id="wrong10">✘</div>
+	  </div>
+	</div>
+
+
+	<div class="box" id="box11">
+	  <h3>作答結果</h3>
+	  <div class="result">
+		<div id="r1" class="r result1">本次測驗共花了15分鐘</div>
+		<div id="r2" class="r result2">答對了7題，拿到70分</div>
+		<div id="r3" class="r result3">請繼續努力</div>
+		<br><br>
+		<div id="result_box"><div id="r5" class="r result5">作答詳情(答對題數/總題數):</div>
+		<div id="r4" class="r result4"></div></div>
+		
+	  </div>
+	  
+	  <div class="button_box">
+		<button onclick="nextQuestion();">再次挑戰</button>
+	  </div>
+	  <br>
+	</div>
+  </body>
+  <head>
+  <script src="../js/quiz.js"></script>
+  <style src="../style/quiz.css"></style>
+  </head>
+</html>

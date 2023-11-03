@@ -1,0 +1,97 @@
+<html>
+  <body>
+	<div class="menu">
+	  <button class="menuName" onclick="callItems();">程式碼模擬</button>
+	  <a class="menuName" href="quiz.html">小測驗</a>
+	  <a id="homepage" class="menuName" href="homepage.html">首頁</a>
+	</div>
+	<div id="items" class="items">
+	  <div id="item1" class="item"><a href="basic.html">基本樣式</a></div>
+	  <div id="item2" class="item"><a href="text.html">文字樣式</a></div>
+	  <div id="item3" class="item"><a href="padding.html">內距、外距</a></div>
+	  <div id="item4" class="item"><a href="transform.html">位移、旋轉、縮放、歪斜</a></div>
+	</div>
+	<div class="box">
+	  <div class="left">
+		<div class="title1">CSS程式碼</div>
+		#text{ <br>&emsp;&emsp;&emsp;//大小<br>&emsp;&emsp;&emsp;font-size: <input type="text" id="input_fontsize">px;&emsp;<button onclick="changeFontSize();">模擬</button><br>&emsp;&emsp;&emsp;//粗細<br>&emsp;&emsp;&emsp;font-weight: <input type="text" id="input_fontweight">;&emsp;<button onclick="changeFontWeight();">模擬</button><br>&emsp;&emsp;&emsp;//字距<br>&emsp;&emsp;&emsp;letter-spacing: <input type="text" id="input_letterspacing">px;&emsp;<button onclick="changeLetterSpacing();">模擬</button><br>&emsp;&emsp;&emsp;//行高<br>&emsp;&emsp;&emsp;line-height: <input type="text" id="input_lineheight">px;&emsp;<button onclick="changeLineHeight();">模擬</button><br>&emsp;&emsp;&emsp;//字型<br>&emsp;&emsp;&emsp;font-family: <input type="text" id="input_fontfamily">;&emsp;<button onclick="changeFontFamily();">模擬</button><br>&emsp;&emsp;&emsp;//位置<br>&emsp;&emsp;&emsp;text-align: <input type="text" id="input_textalign">;&emsp;<button onclick="changeTextAlign();">模擬</button><br>&emsp;&emsp;&emsp;//陰影<br>&emsp;&emsp;&emsp;text-shadow: <input type="text" id="shadowX" placeholder="x方向位移">
+	<input type="text" id="shadowY" placeholder="y方向位移"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+	<input type="text" id="shadow_blurred" placeholder="陰影的模糊度">
+	<input type="text" id="shadow_color" placeholder="陰影的顏色">;&emsp;
+	<button onclick="showshadow();">模擬</button><br>&nbsp;}  
+	  </div>
+	  <div class="middle">
+		<div class="title2">用js控制css</div>
+		<div class="code">
+		var text = document.getElementById("text");
+		<br><br>
+		var textsize, textweight, textspace, heightspace, fontfamily, color;
+		<br><br>
+		textsize = document.getElementById("input_fontsize").value;
+		<br>
+		<font id="textsize_code">
+		text.style.fontSize = <span id="textsize_text">textsize</span>+"px";
+		</font>
+		<br><br>  
+		textweight = document.getElementById("input_fontweight").value;
+		<br>
+		<font id="textweight_code">
+		text.style.fontWeight = <span id="textweight_text">textweight</span>;
+		</font>
+		<br><br> 
+		textspace = document.getElementById("input_letterspacing").value;
+		<br>
+		<font id="textspace_code">
+		text.style.letterSpacing = <span id="textspace_text">textspace</span>+"px";
+		</font>
+		<br><br>
+		heightspace = document.getElementById("input_lineheight").value;
+		<br>
+		<font id="lineheight_code">
+		text.style.lineHeight=<span id="lineheight_text">lineheight</span>+"px";
+		</font>
+		<br><br>
+		fontfamily = document.getElementById("input_fontfamily").value;
+		<br>
+		<font id="fontfamily_code">
+		text.style.fontFamily = <span id="fontfamily_text">fontfamily</span>;
+		</font>
+		<br><br>
+		textalign=document.getElementById("input_textalign").value;
+		<br>
+		<font id="textalign_code">
+		text.style.textAlign = <span id="textalign_text">textalign</span>;
+		</font>
+		<br><br>
+		var shadowX, shadowY, shadow_blurred, shadow_color;
+		<br><br>
+		shadowX = document.getElementById("shadowX").value;
+		<br>
+		shadowY = document.getElementById("shadowY").value;
+		<br>
+		shadow_blurred = document.getElementById("shadow_blurred").value;
+		<br>
+		shadow_color = document.getElementById("shadow_color").value;
+		<br>
+		<font id="shadow_code">
+		text.style.textShadow = <span id="shadowX_text">shadowX</span>+"px "+<span id="shadowY_text">shadowY</span>+"px "<br>+<span id="shadow_blurred_text">shadow_blurred</span>+"px "+<span id="shadow_color_text">shadow_color</span>;
+		</font>
+		</div>
+		<button id="variable" onclick="changeVariable();">查看目前變數的值</button>
+	  </div>
+	  <div class="right">
+		<div class="title3">模擬介面</div>
+		<p id="text">
+		這是一段文字這是一段文字這是一段文字
+		這是一段文字這是一段文字這是一段文字
+		這是一段文字這是一段文字這是一段文字
+		</p>
+		<button id="reset" onclick="resetDiv();">重置</button>
+	  </div>
+	</div>
+  </body>
+  <head>
+  <script src="../js/text.js"></script>
+  <style src="../style/text.css"></style>
+  </head>
+</html>

@@ -1,0 +1,102 @@
+<html>
+  <body>
+	<div class="menu">
+	  <button class="menuName" onclick="callItems();">程式碼模擬</button>
+	  <a class="menuName" href="quiz.html">小測驗</a>
+	  <a id="homepage" class="menuName" href="homepage.html">首頁</a>
+	</div>
+	<div id="items" class="items">
+	  <div id="item1" class="item"><a href="basic.html">基本樣式</a></div>
+	  <div id="item2" class="item"><a href="text.html">文字樣式</a></div>
+	  <div id="item3" class="item"><a href="padding.html">內距、外距</a></div>
+	  <div id="item4" class="item"><a href="transform.html">位移、旋轉、縮放、歪斜</a></div>
+	</div>
+	<div class="box">
+	  <div class="left">
+		<div class="title1">CSS程式碼</div>
+		#item{ <br>&emsp;&emsp;&emsp;//寬高<br>&emsp;&emsp;&emsp;width: <input type="text" id="input_width">px;<br>&emsp;&emsp;&emsp;height: <input type="text" id="input_height">px;&emsp;<button onclick="changeItemSize();">模擬</button><br><br>&emsp;&emsp;&emsp;//背景顏色<br>&emsp;&emsp;&emsp;background-color: <input type="text" id="input_color" placeholder="輸入色碼..."/> ;&emsp;<button onclick="changeItemColor();">模擬</button><br><br>&emsp;&emsp;&emsp;//邊框<br>&emsp;&emsp;&emsp;border-color:  <input type="text" id="border_color" placeholder="輸入色碼..."/> ;<br>&emsp;&emsp;&emsp;border-width: <input type="text" id="border_width"/>px;<br>&emsp;&emsp;&emsp;border-style:&nbsp;
+		  <select id="mySelect">
+			<option value="solid">solid</option>
+			<option value="dashed">dashed</option>
+			<option value="double">double</option>
+			<option value="dotted">dotted</option>
+			<option value="groove">groove</option>
+			<option value="ridge">ridge</option>
+			<option value="inset">inset</option>
+			<option value="outset">outset</option>
+		  </select> ;<br>&emsp;&emsp;&emsp;<span id="bordernone">border: none;<input type="checkbox" id="border"></span>
+		  &emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="changeBorder();">模擬</button><br><br>&emsp;&emsp;&emsp;//圓角<br>&emsp;&emsp;&emsp;border-radius: <input type="text" id="border_radius"/>%;&emsp;<button onclick="changeBorderRadius();">模擬</button><br>&nbsp;}  
+
+	  </div>
+	  <div class="middle">
+		<div class="title2">用js控制css</div>
+		<div class="code">
+		var item = document.getElementById("item");
+		<br><br>
+		var itemheight, itemwidth;
+		<br>
+		itemheight = document.getElementById("input_width").value;
+		<br>
+			itemwidth = document.getElementById("input_height").value;
+		<br>
+		<font id="wh_code">
+			item.style.height = <span id="itemheight_text">itemheight</span> +"px";
+		<br>
+			item.style.width = <span id="itemwidth_text">itemwidth</span> +"px";
+		</font>
+		<br><br>
+		var itemcolor;
+		<br>
+		itemcolor = document.getElementById("input_color").value;
+		<br>
+		<font id="background_code">
+			item.style.background = <span id="itemcolor_text">itemcolor</span>;
+		</font>
+		<br><br>
+		var borderstyle, index, val, bordercolor, borderwidth;
+		<br>
+		bordercolor = document.getElementById("border_color").value;
+		<br>
+		borderwidth = document.getElementById("border_width").value;
+		<font id="border_code1">
+		<br>
+		item.style.borderColor = <span id="bordercolor_text">bordercolor</span>;
+		<br>
+		item.style.borderWidth = <span id="borderwidth_text">borderwidth</span>+"px";
+		</font>
+		
+		<br><br>
+		borderstyle = document.getElementById("mySelect");
+		<br>
+		index = borderstyle.selectedIndex;
+		<br>
+		val = borderstyle.options[index].value;
+		<br>
+		<font id="border_code2">
+		item.style.borderStyle = <span id="val_text">val</span>; 
+		</font>
+		<br><br>
+		var borderradius;
+		<br>
+		borderradius = document.getElementById("border_radius").value;
+		<br>
+		<font id="radius_code">
+		item.style.borderRadius = <span id="borderradius_text">borderradius</span>+"%";
+		</font>
+		
+		</div>
+		<button id="variable" onclick="changeVariable();">查看目前變數的值</button>
+	  </div>
+	  <div class="right">
+		<div class="title3">模擬介面</div>
+		<div class="speech-bubble"><span class="im">我是一個id叫做"item"的&lt;div&gt;<br>預設為長寬各100px,白底黑框的正方形<br>輸入左方數值來操縱我！！！</span></div>
+		<div class="item" id="item"></div>
+		<button id="reset" onclick="resetDiv();">重置</button>
+	  </div>
+	</div>
+  </body>
+  <head>
+  <script src="../js/basic.js"></script>
+  <style src="../style/basic.css"></style>
+  </head>
+</html>

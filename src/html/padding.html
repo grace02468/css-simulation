@@ -1,0 +1,44 @@
+<html>
+  <body>
+	<div class="menu">
+	  <button class="menuName" onclick="callItems();">程式碼模擬</button>
+	  <a class="menuName" href="quiz.html">小測驗</a>
+	   <a id="homepage" class="menuName" href="homepage.html">首頁</a>
+	</div>
+	<div id="items" class="items">
+	  <div id="item1" class="item"><a href="basic.html">基本樣式</a></div>
+	  <div id="item2" class="item"><a href="text.html">文字樣式</a></div>
+	  <div id="item3" class="item"><a href="padding.html">內距、外距</a></div>
+	  <div id="item4" class="item"><a href="transform.html">位移、旋轉、縮放、歪斜</a></div>
+	</div>
+	<div class="box">
+	  <div id="outer" class="outer">
+		<div id="margin_line"><div id="margin_value">margin(預設50px)</div></div>
+		<div id="section" class="section">
+		  <div id="padding_line"><div id="padding_value">padding(預設80px)</div></div>
+		  <div id="inner"><div class="section_content">block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素 block裡的元素</div></div>
+		  <div class="note">
+			預設為寬550px,高350px的區塊
+		  </div>
+
+		</div>
+	  </div>
+	  <div class="control">
+		padding: <input type="text" id="input_padding">px;&nbsp;<button onclick="changePadding();">模擬</button>&emsp;
+		margin: <input type="text" id="input_margin">px;&nbsp;<button onclick="changeMargin();">模擬</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button id="resetbutton" onclick="reset();">重置</button>
+	  </div>
+	</div>
+	<div class="left">left</div>
+	<div class="right">right</div>
+	<div class="top">top</div>
+	<div class="bottom">bottom</div>
+
+
+
+
+  </body>
+  <head>
+  <script src="../js/padding.js"></script>
+  <style src="../style/padding.css"></style>
+  </head>
+</html>
